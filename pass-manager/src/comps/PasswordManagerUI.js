@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const AccountList = [
   // Replace with your actual account data
-  { id: 1, name: "Account 1", username: "user1" },
-  { id: 2, name: "Account 2", username: "user2" },
+  { id: 1, website: "Google", username: "sharon0022@gmail.com" },
+  { id: 2, website: "Microsoft", username: "sharon5645@outlook.in" },
   // ... other accounts
 ];
 
@@ -24,39 +24,37 @@ const PasswordManagerUI = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen dark:bg-black dark:text-dark-primary bg-light-primary text-black p-8">
       <div className="max-w-4xl mx-auto">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold text-gray-700">Password Manager</h1>
-          <a href="/addpasswordform" reference='noreferrer'>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              Add New
-            </button>
+          <h1 className="text-3xl font-bold">Password Manager</h1>
+          <a href="/addpasswordform" reference="noreferrer">
+            <button className="dark:bg-dark-primary dark:text-white bg-white text-light-primary font-bold py-2 px-4 rounded">Add New</button>
           </a>
         </div>
-        <div className="bg-white shadow rounded-lg p-6">
+        <div className="p-6">
           <div className="mb-4">
             <input
               type="search"
-              className="w-full p-2 border border-gray-300 rounded-lg"
+              className="w-full p-2 border dark:bg-dark-primary rounded-lg"
               placeholder="Search accounts..."
               value={searchTerm}
               onChange={handleSearch}
             />
           </div>
-          <ul className="divide-y divide-gray-200">
+          <ul className="my-4">
             {filteredAccounts.map((account) => (
               <li
                 key={account.id}
-                className="py-4 flex justify-between items-center"
+                className="pb-4 pt-2 px-2 flex justify-between items-center bg-light-secondary dark:bg-dark-secondary my-2 rounded"
               >
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-800">
-                    {account.name}
+                <div className="">
+                  <h2 className="text-lg font-semibold text-white">
+                    {account.website}
                   </h2>
-                  <p className="text-gray-600">{account.username}</p>
+                  <p className="text-gray-200">{account.username}</p>
                 </div>
-                <button className="text-blue-600 hover:text-blue-800">
+                <button className="p-1 rounded dark:bg-dark-tertiary bg-light-tertiary text-white">
                   View
                 </button>
               </li>
